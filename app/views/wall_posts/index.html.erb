@@ -1,0 +1,29 @@
+<h1>Listing wall_posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wall_posts.each do |wall_post| %>
+      <tr>
+        <td><%= wall_post.title %></td>
+        <td><%= wall_post.body %></td>
+        <td><%= link_to 'Show', wall_post %></td>
+        <td><%= link_to 'Edit', edit_wall_post_path(wall_post) %></td>
+        <td><%= link_to 'Destroy', wall_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wall post', new_wall_post_path %>
